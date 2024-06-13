@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><i class="fas fa-arrow-left"></i> Reports</h1>
+        <div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </header>
+      <main>
+        <div class="filter_div">
+          <div class="select_div">
+            <label for="salesPerson">Sales Person</label>
+            <select
+              id="salesPerson"
+              class="select"
+              onchange="handleSelectChange()"
+            >
+              <option value="All">All</option>
+              <option value="Kisan Singh">Kisan Singh</option>
+              <option value="Deepali Verma">Deepali Verma</option>
+              <option value="Praveen Verma">Praveen Verma</option>
+              <option value="Prachi Gupta">Prachi Gupta</option>
+              <option value="Irfan Pathan">Irfan Pathan</option>
+              <option value="Varun Dhiman">Varun Dhiman</option>
+              <option value="Vin Diesel">Vin Diesel</option>
+            </select>
+          </div>
+          <div class="select_div">
+            <label for="monthly">Monthly</label>
+            <select
+              id="monthly"
+              class="select"
+              onchange="setMonthly(this.value)"
+            >
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option selected value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </div>
+          <div class="select_div">
+            <label for="dateRange">Date Range</label>
+            <input
+              type="date"
+              id="dateRange"
+              class="select"
+              onchange="handleDateValue()"
+            />
+          </div>
+        </div>
+        <div class="allFilters">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+        <section class="overview">
+          <h2>April</h2>
+          <div class="month-info">
+            <div class="stats">
+              <div>
+                <p>Overall msg</p>
+                <p class="black">4,000</p>
+              </div>
+              <div>
+                <p>Sent msg</p>
+                <p class="green">3,000</p>
+              </div>
+              <div>
+                <p>Delayed msg</p>
+                <p class="red">500</p>
+              </div>
+              <div>
+                <p>Received msg</p>
+                <p class="blue">500</p>
+              </div>
+              <div>
+                <p>Assign leads</p>
+                <p class="black">4,000</p>
+              </div>
+              <div>
+                <p>MSG on assign leads</p>
+                <p class="green">3,000</p>
+              </div>
+              <div class="newStart">
+                <p>
+                  Document copy
+                  <span class="tooltip">
+                    <i class="fa-solid fa-info"></i>
+                    <span class="tooltiptext"
+                      >Data available only on selection of sales person
+                      individually</span
+                    >
+                  </span>
+                </p>
+                <p>-</p>
+              </div>
+              <div>
+                <p>
+                  Document list
+                  <span class="tooltip">
+                    <i class="fa-solid fa-info"></i>
+                    <span class="tooltiptext"
+                      >Data available only on selection of sales person
+                      individually</span
+                    >
+                  </span>
+                </p>
+                <p>-</p>
+              </div>
+              <div>
+                <p>
+                  Product img sent
+                  <span class="tooltip">
+                    <i class="fa-solid fa-info"></i>
+                    <span class="tooltiptext"
+                      >Data available only on selection of sales person
+                      individually</span
+                    >
+                  </span>
+                </p>
+                <p>-</p>
+              </div>
+            </div>
+            <div class="chart">
+              <canvas id="overviewChart"></canvas>
+              <div class="chartInfo">
+                <div class="single_line">
+                  <p class="text">
+                    <i class="fa-solid fa-circle green"></i>
+                    <span>Send msg</span>
+                  </p>
+                  <p class="green percentage">40%</p>
+                </div>
+                <div class="single_line">
+                  <p class="text">
+                    <i class="fa-solid fa-circle red"></i>
+                    <span>Delayed msg</span>
+                  </p>
+                  <p class="red percentage">15%</p>
+                </div>
+                <div class="single_line">
+                  <p class="text">
+                    <i class="fa-solid fa-circle blue"></i>
+                    <span>Received msg</span>
+                  </p>
+                  <p class="blue percentage">45%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="week-report">
+          <h2>Week Wise Report</h2>
+          <div class="week">
+            <h3>Week 1</h3>
+            <div class="stats">
+              <div>
+                <p>Overall msg</p>
+                <p>2,000</p>
+              </div>
+              <div>
+                <p>Assign leads</p>
+                <p>1,000</p>
+              </div>
+              <div>
+                <p>MSG on assign leads</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Sent msg</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Delayed msg</p>
+                <p class="delayed">300</p>
+              </div>
+              <div>
+                <p>Received msg</p>
+                <p class="received">500</p>
+              </div>
+            </div>
+            <div class="chart">
+              <canvas id="week1Chart"></canvas>
+            </div>
+          </div>
+          <div class="week">
+            <h3>Week 2</h3>
+            <div class="stats">
+              <div>
+                <p>Overall msg</p>
+                <p>2,000</p>
+              </div>
+              <div>
+                <p>Assign leads</p>
+                <p>1,000</p>
+              </div>
+              <div>
+                <p>MSG on assign leads</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Sent msg</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Delayed msg</p>
+                <p class="delayed">300</p>
+              </div>
+              <div>
+                <p>Received msg</p>
+                <p class="received">500</p>
+              </div>
+            </div>
+            <div class="chart">
+              <canvas id="week2Chart"></canvas>
+            </div>
+          </div>
+          <div class="week">
+            <h3>Week 3</h3>
+            <div class="stats">
+              <div>
+                <p>Overall msg</p>
+                <p>2,000</p>
+              </div>
+              <div>
+                <p>Assign leads</p>
+                <p>1,000</p>
+              </div>
+              <div>
+                <p>MSG on assign leads</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Sent msg</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Delayed msg</p>
+                <p class="delayed">300</p>
+              </div>
+              <div>
+                <p>Received msg</p>
+                <p class="received">500</p>
+              </div>
+            </div>
+            <div class="chart">
+              <canvas id="week3Chart"></canvas>
+            </div>
+          </div>
+          <div class="week">
+            <h3>Week 4</h3>
+            <div class="stats">
+              <div>
+                <p>Overall msg</p>
+                <p>2,000</p>
+              </div>
+              <div>
+                <p>Assign leads</p>
+                <p>1,000</p>
+              </div>
+              <div>
+                <p>MSG on assign leads</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Sent msg</p>
+                <p class="sent">1,000</p>
+              </div>
+              <div>
+                <p>Delayed msg</p>
+                <p class="delayed">300</p>
+              </div>
+              <div>
+                <p>Received msg</p>
+                <p class="received">500</p>
+              </div>
+            </div>
+            <div class="chart">
+              <canvas id="week4Chart"></canvas>
+            </div>
+          </div>
+        </section> -->
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

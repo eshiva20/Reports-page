@@ -1,0 +1,295 @@
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ecf3f9;
+}
+
+.container {
+  width: calc(100% - 20px);
+  padding: 10px;
+
+  header {
+    background-color: #4bbe9f;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      i {
+        cursor: pointer;
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 20px;
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+
+  main {
+    margin-top: 20px;
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    .filter_div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+
+      .select_div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 16px;
+
+        label {
+          color: #1b2124;
+          font-weight: 500;
+        }
+
+        .select {
+          width: 180px;
+          box-shadow: 1px 2px 6px 0px #0000001a;
+          border-radius: 4px;
+          height: 30px;
+          padding: 0px 5px;
+          outline: none;
+          border: 1px solid #666;
+        }
+      }
+    }
+
+    .allFilters {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .filter_values {
+        margin-top: 10px;
+        color: #525252;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .filterSalesName {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: padding 0.2s ease;
+          padding: 2px 5px;
+          font-size: 16px;
+          p {
+            margin: 0px;
+          }
+          .crossIcon {
+            opacity: 0;
+            display: none;
+            transition: opacity 0.2s ease;
+            margin-left: 5px;
+          }
+        }
+
+        .filterSalesName:hover {
+          color: #5a4bda;
+          background: #ecedff;
+          padding: 2px 10px;
+          margin: 0px 6px;
+
+          .crossIcon {
+            display: block;
+            opacity: 1;
+          }
+        }
+
+        hr {
+          height: 20px;
+          width: 1px;
+        }
+      }
+    }
+
+    .overview {
+      padding: 20px;
+      border-radius: 5px;
+      border: 1px solid #f0f0f0;
+      margin: 20px 0px;
+
+      h2 {
+        margin: 0px 0px 20px 0px;
+        color: #303030;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .month-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .stats {
+          width: 60%;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px 0px;
+
+          div {
+            p {
+              margin: 0px;
+            }
+            p:nth-child(1) {
+              color: #525252;
+              font-size: 17px;
+              font-weight: 400;
+              text-wrap: nowrap;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              .tooltip {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                i {
+                  font-size: 8px;
+                  border-radius: 50%;
+                  color: #2d3aac;
+                  border: 1px solid #2d3aac;
+                  padding: 3px 5px;
+                  cursor: pointer;
+                }
+
+                .tooltiptext {
+                  visibility: hidden;
+                  width: 220px;
+                  background-color: #000;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px;
+                  position: absolute;
+                  z-index: 1;
+                  bottom: 125%;
+                  left: 50%;
+                  margin-left: -120px;
+                  margin-bottom: 4px;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+                  font-size: 13px;
+                  text-wrap: wrap;
+                }
+              }
+              .tooltip .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #000 transparent transparent;
+              }
+              .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+
+            p:nth-child(2) {
+              font-size: 22px;
+              font-weight: 800;
+            }
+            .black {
+              color: #303030;
+            }
+            .green {
+              color: #58be55;
+            }
+            .red {
+              color: #ff0000;
+            }
+            .blue {
+              color: #3497f9;
+            }
+          }
+          .newStart {
+            grid-column-start: 1;
+          }
+        }
+
+        .chart {
+          width: 40%;
+          display: flex;
+          height: 160px;
+          align-items: center;
+          justify-content: space-around;
+
+          .chartInfo {
+            .single_line {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 200px;
+              color: #303030;
+              font-size: 17px;
+
+              .text {
+                margin: 3px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                i {
+                  font-size: 10px;
+                }
+                .green {
+                  color: #58be55;
+                }
+                .red {
+                  color: #ff0000;
+                }
+                .blue {
+                  color: #3497f9;
+                }
+              }
+              .percentage {
+                margin: 0px;
+                border-radius: 50px;
+                padding: 1px 10px;
+                font-size: 14px;
+              }
+              .green {
+                color: #58be55;
+                background: #d4ffd3;
+              }
+              .red {
+                color: #ff0000;
+                background: #ffe3e3;
+              }
+              .blue {
+                color: #3497f9;
+                background: #d0e7ff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
