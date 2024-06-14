@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body>
     <div class="container">
@@ -63,13 +68,22 @@
               <option value="December">December</option>
             </select>
           </div>
-          <div class="select_div">
+          <!-- <div class="select_div">
             <label for="dateRange">Date Range</label>
             <input
               type="date"
               id="dateRange"
-              class="select"
+              class="select dateRange"
               onchange="handleDateValue()"
+            />
+          </div> -->
+          <div class="select_div">
+            <label for="dateRange">Date Range</label>
+            <input
+              placeholder="Start Date  -  End Date"
+              type="text"
+              id="dateRange"
+              class="select"
             />
           </div>
         </div>
@@ -306,6 +320,7 @@
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>

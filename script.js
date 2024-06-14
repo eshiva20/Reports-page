@@ -135,3 +135,13 @@ function clearAll() {
   setMonthly("");
   clearDateRange();
 }
+
+flatpickr("#dateRange", {
+  mode: "range",
+  dateFormat: "Y-m-d",
+  onClose: function (selectedDates, dateStr, instance) {
+    if (selectedDates.length === 2) {
+      handleDateValue(selectedDates);
+    }
+  },
+});
