@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let salesPerson = "All";
-let monthly = "April";
+let monthly = "";
 let formatDate = "";
 let dates = "";
 
@@ -59,11 +59,20 @@ function setMonthly(value) {
   updateFilters();
 }
 
-function handleDateValue() {
-  const dateRange = document.getElementById("dateRange").value;
-  formatDate = dateRange;
-  dates = dateRange;
-  updateFilters();
+function handleDateValue(selectedDates) {
+  if (selectedDates.length === 2) {
+    const startDate = selectedDates[0];
+    const endDate = selectedDates[1];
+    formatDate = `${startDate.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+    })} - ${endDate.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+    })}`;
+    dates = formatDate;
+    updateFilters();
+  }
 }
 
 function updateFilters() {
@@ -128,20 +137,26 @@ function clearDateRange() {
   dates = "";
   document.getElementById("dateRange").value = "";
   updateFilters();
+  reload();
 }
 
 function clearAll() {
   setSalesPerson("All");
   setMonthly("");
   clearDateRange();
+  reload();
+}
+
+function reload() {
+  location.reload();
 }
 
 flatpickr("#dateRange", {
   mode: "range",
   dateFormat: "Y-m-d",
+  altInput: true,
+  altFormat: "d M",
   onClose: function (selectedDates, dateStr, instance) {
-    if (selectedDates.length === 2) {
-      handleDateValue(selectedDates);
-    }
+    handleDateValue(selectedDates);
   },
 });
