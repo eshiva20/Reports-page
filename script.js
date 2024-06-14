@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   new Chart(document.getElementById("overviewChart"), config);
+  new Chart(document.getElementById("chart1"), config);
+  new Chart(document.getElementById("chart2"), config);
+  new Chart(document.getElementById("chart3"), config);
+  new Chart(document.getElementById("chart4"), config);
 
   ["week1Chart", "week2Chart", "week3Chart", "week4Chart"].forEach((id) => {
     new Chart(document.getElementById(id), {

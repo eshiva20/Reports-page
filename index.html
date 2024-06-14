@@ -68,15 +68,7 @@
               <option value="December">December</option>
             </select>
           </div>
-          <!-- <div class="select_div">
-            <label for="dateRange">Date Range</label>
-            <input
-              type="date"
-              id="dateRange"
-              class="select dateRange"
-              onchange="handleDateValue()"
-            />
-          </div> -->
+
           <div class="select_div">
             <label for="dateRange">Date Range</label>
             <input
@@ -186,137 +178,251 @@
             </div>
           </div>
         </section>
-        <!-- <section class="week-report">
+        <section class="week-report">
           <h2>Week Wise Report</h2>
-          <div class="week">
-            <h3>Week 1</h3>
-            <div class="stats">
-              <div>
-                <p>Overall msg</p>
-                <p>2,000</p>
+          <div class="all_cards">
+            <div class="single_card">
+              <div class="left">
+                <h2 class="title">Week 1</h2>
+                <p class="date">1 April,2024 - 7 April,2024</p>
+                <div class="topCards">
+                  <div>
+                    <p>Overall msg</p>
+                    <p class="black">2,000</p>
+                  </div>
+                  <div>
+                    <p>Assign leads</p>
+                    <p class="black">1,000</p>
+                  </div>
+                  <div>
+                    <p>MSG on assign leads</p>
+                    <p class="green">1,000</p>
+                  </div>
+                </div>
+                <div class="bottomCards">
+                  <div>
+                    <p>Sent msg</p>
+                    <p class="green">1,000</p>
+                  </div>
+                  <div>
+                    <p>Delayed msg</p>
+                    <p class="red">300</p>
+                  </div>
+                  <div>
+                    <p>Received msg</p>
+                    <p class="blue">500</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p>Assign leads</p>
-                <p>1,000</p>
-              </div>
-              <div>
-                <p>MSG on assign leads</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Sent msg</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Delayed msg</p>
-                <p class="delayed">300</p>
-              </div>
-              <div>
-                <p>Received msg</p>
-                <p class="received">500</p>
+              <div class="right">
+                <canvas id="chart1"></canvas>
+                <div class="chartInfo">
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle green"></i>
+                      <span>Send msg</span>
+                    </p>
+                    <p class="green percentage">40%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle red"></i>
+                      <span>Delayed msg</span>
+                    </p>
+                    <p class="red percentage">15%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle blue"></i>
+                      <span>Received msg</span>
+                    </p>
+                    <p class="blue percentage">45%</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="chart">
-              <canvas id="week1Chart"></canvas>
+            <div class="single_card">
+              <div class="left">
+                <h2 class="title">Week 2</h2>
+                <p class="date">8 April,2024 - 14 April,2024</p>
+                <div class="topCards">
+                  <div>
+                    <p>Overall msg</p>
+                    <p class="black">2,000</p>
+                  </div>
+                  <div>
+                    <p>Assign leads</p>
+                    <p class="black">1,000</p>
+                  </div>
+                  <div>
+                    <p>MSG on assign leads</p>
+                    <p class="green">1,000</p>
+                  </div>
+                </div>
+                <div class="bottomCards">
+                  <div>
+                    <p>Sent msg</p>
+                    <p class="green">1,000</p>
+                  </div>
+                  <div>
+                    <p>Delayed msg</p>
+                    <p class="red">300</p>
+                  </div>
+                  <div>
+                    <p>Received msg</p>
+                    <p class="blue">500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <canvas id="chart2"></canvas>
+                <div class="chartInfo">
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle green"></i>
+                      <span>Send msg</span>
+                    </p>
+                    <p class="green percentage">40%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle red"></i>
+                      <span>Delayed msg</span>
+                    </p>
+                    <p class="red percentage">15%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle blue"></i>
+                      <span>Received msg</span>
+                    </p>
+                    <p class="blue percentage">45%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="single_card">
+              <div class="left">
+                <h2 class="title">Week 3</h2>
+                <p class="date">15 April,2024 - 21 April,2024</p>
+                <div class="topCards">
+                  <div>
+                    <p>Overall msg</p>
+                    <p class="black">2,000</p>
+                  </div>
+                  <div>
+                    <p>Assign leads</p>
+                    <p class="black">1,000</p>
+                  </div>
+                  <div>
+                    <p>MSG on assign leads</p>
+                    <p class="green">1,000</p>
+                  </div>
+                </div>
+                <div class="bottomCards">
+                  <div>
+                    <p>Sent msg</p>
+                    <p class="green">1,000</p>
+                  </div>
+                  <div>
+                    <p>Delayed msg</p>
+                    <p class="red">300</p>
+                  </div>
+                  <div>
+                    <p>Received msg</p>
+                    <p class="blue">500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <canvas id="chart3"></canvas>
+                <div class="chartInfo">
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle green"></i>
+                      <span>Send msg</span>
+                    </p>
+                    <p class="green percentage">40%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle red"></i>
+                      <span>Delayed msg</span>
+                    </p>
+                    <p class="red percentage">15%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle blue"></i>
+                      <span>Received msg</span>
+                    </p>
+                    <p class="blue percentage">45%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="single_card">
+              <div class="left">
+                <h2 class="title">Week 4</h2>
+                <p class="date">22 April,2024 - 28 April,2024</p>
+                <div class="topCards">
+                  <div>
+                    <p>Overall msg</p>
+                    <p class="black">2,000</p>
+                  </div>
+                  <div>
+                    <p>Assign leads</p>
+                    <p class="black">1,000</p>
+                  </div>
+                  <div>
+                    <p>MSG on assign leads</p>
+                    <p class="green">1,000</p>
+                  </div>
+                </div>
+                <div class="bottomCards">
+                  <div>
+                    <p>Sent msg</p>
+                    <p class="green">1,000</p>
+                  </div>
+                  <div>
+                    <p>Delayed msg</p>
+                    <p class="red">300</p>
+                  </div>
+                  <div>
+                    <p>Received msg</p>
+                    <p class="blue">500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <canvas id="chart4"></canvas>
+                <div class="chartInfo">
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle green"></i>
+                      <span>Send msg</span>
+                    </p>
+                    <p class="green percentage">40%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle red"></i>
+                      <span>Delayed msg</span>
+                    </p>
+                    <p class="red percentage">15%</p>
+                  </div>
+                  <div class="single_line">
+                    <p class="text">
+                      <i class="fa-solid fa-circle blue"></i>
+                      <span>Received msg</span>
+                    </p>
+                    <p class="blue percentage">45%</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="week">
-            <h3>Week 2</h3>
-            <div class="stats">
-              <div>
-                <p>Overall msg</p>
-                <p>2,000</p>
-              </div>
-              <div>
-                <p>Assign leads</p>
-                <p>1,000</p>
-              </div>
-              <div>
-                <p>MSG on assign leads</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Sent msg</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Delayed msg</p>
-                <p class="delayed">300</p>
-              </div>
-              <div>
-                <p>Received msg</p>
-                <p class="received">500</p>
-              </div>
-            </div>
-            <div class="chart">
-              <canvas id="week2Chart"></canvas>
-            </div>
-          </div>
-          <div class="week">
-            <h3>Week 3</h3>
-            <div class="stats">
-              <div>
-                <p>Overall msg</p>
-                <p>2,000</p>
-              </div>
-              <div>
-                <p>Assign leads</p>
-                <p>1,000</p>
-              </div>
-              <div>
-                <p>MSG on assign leads</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Sent msg</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Delayed msg</p>
-                <p class="delayed">300</p>
-              </div>
-              <div>
-                <p>Received msg</p>
-                <p class="received">500</p>
-              </div>
-            </div>
-            <div class="chart">
-              <canvas id="week3Chart"></canvas>
-            </div>
-          </div>
-          <div class="week">
-            <h3>Week 4</h3>
-            <div class="stats">
-              <div>
-                <p>Overall msg</p>
-                <p>2,000</p>
-              </div>
-              <div>
-                <p>Assign leads</p>
-                <p>1,000</p>
-              </div>
-              <div>
-                <p>MSG on assign leads</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Sent msg</p>
-                <p class="sent">1,000</p>
-              </div>
-              <div>
-                <p>Delayed msg</p>
-                <p class="delayed">300</p>
-              </div>
-              <div>
-                <p>Received msg</p>
-                <p class="received">500</p>
-              </div>
-            </div>
-            <div class="chart">
-              <canvas id="week4Chart"></canvas>
-            </div>
-          </div>
-        </section> -->
+        </section>
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
