@@ -10,16 +10,48 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
   };
 
-  const weekData = {
-    labels: ["Sent msg", "Delayed msg", "Received msg"],
-    datasets: [
-      {
-        label: "Messages",
-        data: [1000, 300, 500],
-        backgroundColor: ["green", "red", "blue"],
-      },
-    ],
-  };
+  const weekData = [
+    {
+      week: "Week 1",
+      date: "1 April,2024 - 7 April,2024",
+      overallMsg: 2000,
+      assignLeads: 1000,
+      msgOnAssignLeads: 1000,
+      sentMsg: 1000,
+      delayedMsg: 300,
+      receivedMsg: 500,
+    },
+    {
+      week: "Week 2",
+      date: "8 April,2024 - 14 April,2024",
+      overallMsg: 2000,
+      assignLeads: 1000,
+      msgOnAssignLeads: 1000,
+      sentMsg: 1000,
+      delayedMsg: 300,
+      receivedMsg: 500,
+    },
+    {
+      week: "Week 3",
+      date: "15 April,2024 - 21 April,2024",
+      overallMsg: 2000,
+      assignLeads: 1000,
+      msgOnAssignLeads: 1000,
+      sentMsg: 1000,
+      delayedMsg: 300,
+      receivedMsg: 500,
+    },
+    {
+      week: "Week 4",
+      date: "22 April,2024 - 28 April,2024",
+      overallMsg: 2000,
+      assignLeads: 1000,
+      msgOnAssignLeads: 1000,
+      sentMsg: 1000,
+      delayedMsg: 300,
+      receivedMsg: 500,
+    },
+  ];
 
   const config = {
     type: "doughnut",
@@ -35,17 +67,81 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   new Chart(document.getElementById("overviewChart"), config);
-  new Chart(document.getElementById("chart1"), config);
-  new Chart(document.getElementById("chart2"), config);
-  new Chart(document.getElementById("chart3"), config);
-  new Chart(document.getElementById("chart4"), config);
 
-  ["week1Chart", "week2Chart", "week3Chart", "week4Chart"].forEach((id) => {
-    new Chart(document.getElementById(id), {
-      type: "doughnut",
-      data: weekData,
+  const renderWeekCards = () => {
+    const weekCardsContainer = document.querySelector(".all_cards");
+    weekCardsContainer.innerHTML = weekData
+      .map(
+        (week, index) => `
+        <div class="single_card">
+          <div class="left">
+            <h2 class="title">${week.week}</h2>
+            <p class="date">${week.date}</p>
+            <div class="topCards">
+              <div>
+                <p>Overall msg</p>
+                <p class="black">${week.overallMsg}</p>
+              </div>
+              <div>
+                <p>Assign leads</p>
+                <p class="black">${week.assignLeads}</p>
+              </div>
+              <div>
+                <p>MSG on assign leads</p>
+                <p class="green">${week.msgOnAssignLeads}</p>
+              </div>
+            </div>
+            <div class="bottomCards">
+              <div>
+                <p>Sent msg</p>
+                <p class="green">${week.sentMsg}</p>
+              </div>
+              <div>
+                <p>Delayed msg</p>
+                <p class="red">${week.delayedMsg}</p>
+              </div>
+              <div>
+                <p>Received msg</p>
+                <p class="blue">${week.receivedMsg}</p>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <canvas id="chart${index + 1}"></canvas>
+            <div class="chartInfo">
+              <div class="single_line">
+                <p class="text">
+                  <i class="fa-solid fa-circle green"></i>
+                  <span>Send msg</span>
+                </p>
+                <p class="green percentage">40%</p>
+              </div>
+              <div class="single_line">
+                <p class="text">
+                  <i class="fa-solid fa-circle red"></i>
+                  <span>Delayed msg</span>
+                </p>
+                <p class="red percentage">15%</p>
+              </div>
+              <div class="single_line">
+                <p class="text">
+                  <i class="fa-solid fa-circle blue"></i>
+                  <span>Received msg</span>
+                </p>
+                <p class="blue percentage">45%</p>
+              </div>
+            </div>
+          </div>
+        </div>`
+      )
+      .join("");
+
+    weekData.forEach((_, index) => {
+      new Chart(document.getElementById(`chart${index + 1}`), config);
     });
-  });
+  };
+
+  renderWeekCards();
 });
 
 let salesPerson = "All";
